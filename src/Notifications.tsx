@@ -13,12 +13,19 @@ import {
   faMapSigns,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export const Notifications = () => {
+  const [notifications, setNotifications] = useState([...cannedNotifications]);
   const onDragEnd: OnDragEndResponder = (result) => {
     if (!result.destination) {
       return;
     }
+
+    const nextNotifications = [...notifications];
+    const [movedNotif] = nextNotifications.splice(result.source.index, 1);
+    nextNotifications.splice(result.destination.index, 0, movedNotif);
+    setNotifications(nextNotifications);
   };
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -31,7 +38,7 @@ export const Notifications = () => {
           >
             {notifications.map((messageEntry, idx) => (
               <Notification
-                key={idx}
+                key={messageEntry.id}
                 id={messageEntry.id}
                 index={idx}
                 icon={messageEntry.icon}
@@ -45,7 +52,7 @@ export const Notifications = () => {
   );
 };
 
-const notifications = [
+const cannedNotifications = [
   { id: "message-1", icon: faCoffee },
   { id: "message-2", icon: faMessage },
   { id: "message-3", icon: faBurger },

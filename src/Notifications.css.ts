@@ -1,7 +1,10 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 export const notificationsList = style({
   display: "flex",
   flexDirection: "column",
-  gap: "16px",
+});
+
+globalStyle(`${notificationsList} > *`, {
+  marginBottom: "16px",
 });
