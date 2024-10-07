@@ -33,6 +33,7 @@ export const Notifications = () => {
 
   return (
     <div className={styles.page}>
+      <link rel="octo:octothorpes" href="Notifications"></link>
       <h1>Notifications</h1>
       <div>
         How do you like your notifications? Order the notifications below,
