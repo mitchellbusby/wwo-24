@@ -21,8 +21,7 @@ export const Notification = ({
         {...provided.dragHandleProps}
       >
         <div style={{ alignSelf: "center" }}>
-          {/* todo: icon needs to be bigger :) */}
-          <FontAwesomeIcon icon={icon} />
+          <FontAwesomeIcon icon={icon} size="lg" />
         </div>
         <div>
           <div>Fionn of the Train</div>
