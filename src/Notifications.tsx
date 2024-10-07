@@ -41,7 +41,7 @@ export const Notifications = () => {
       </div>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="notifications-list">
-          {(provided, snapshot) => (
+          {(provided) => (
             <div
               className={styles.notificationsList}
               {...provided.droppableProps}

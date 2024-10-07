@@ -1,6 +1,5 @@
 import * as styles from "./Notification.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { Draggable } from "react-beautiful-dnd";
 
 export const Notification = ({
@@ -13,7 +12,7 @@ export const Notification = ({
   icon: any;
 }) => (
   <Draggable draggableId={id} index={index}>
-    {(provided, snapshot) => (
+    {(provided) => (
       <div
         className={styles.notification}
         ref={provided.innerRef}
