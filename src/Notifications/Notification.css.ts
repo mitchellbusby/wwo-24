@@ -7,6 +7,8 @@ export const notification = style({
   border: "1px solid black",
   borderRadius: 8,
   padding: 16,
+  userSelect: "none",
+  background: "white",
 });
 
 // use Font Awesome for icons
