@@ -165,6 +165,4 @@ const cannedNotifications = [
   },
 ];
 
-// todo: finish filling out notifications
-
 // todo: add octothorpes cbs https://weirdweboctober.website/
