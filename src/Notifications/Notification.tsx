@@ -8,12 +8,14 @@ export const Notification = ({
   icon,
   heading,
   body,
+  timestamp,
 }: {
   id: any;
   index: number;
   icon: any;
   heading: string;
   body: string;
+  timestamp: string;
 }) => (
   <Draggable draggableId={id} index={index}>
     {(provided) => (
@@ -35,12 +37,10 @@ export const Notification = ({
             marginRight: "0",
             marginLeft: "auto",
             flexShrink: 0,
-            // width: "100%",
-            // flex: "0 1 auto",
             fontSize: "14px",
           }}
         >
-          45m ago
+          {timestamp}
         </div>
       </div>
     )}

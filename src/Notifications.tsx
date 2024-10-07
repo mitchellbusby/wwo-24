@@ -55,6 +55,7 @@ export const Notifications = () => {
                   icon={messageEntry.icon}
                   heading={messageEntry.heading}
                   body={messageEntry.body}
+                  timestamp={messageEntry.timestamp}
                 />
               ))}
               {provided.placeholder}
@@ -126,43 +127,68 @@ a {
   );
 };
 
-const cannedNotifications = [
+const cannedNotifications = shuffle([
   {
     id: "message-1",
     icon: faMessage,
     heading: "Angela Bloggo",
     body: "OK I have some huge tea",
+    timestamp: "8m ago",
   },
   {
     id: "message-2",
     icon: faCoffee,
     heading: "Skip The Queue",
     body: "Your coffee will be ready in 5 minutes",
+    timestamp: "2m ago",
   },
   {
     id: "message-3",
     icon: faBurger,
     heading: "Deliverdash",
     body: "20% off all orders TODAY ONLY with the coupon NEVERGOOUT",
+    timestamp: "45m ago",
   },
   {
     id: "message-4",
     icon: faHeartCircleCheck,
     heading: "Activity",
     body: "You haven't yet closed your activity rings for today! Get out and move some more",
+    timestamp: "4:45pm",
   },
   {
     id: "message-5",
     icon: faMapSigns,
     heading: "Maps",
     body: "How did you find 401 Coffee? Share your review for others to find out cool places",
+    timestamp: "Sat 9:01am",
   },
   {
     id: "message-6",
     icon: faMessage,
     heading: "Johnny Bravado",
     body: "Are you headed to Fiona's party tonight?",
+    timestamp: "1h ago",
   },
-];
+]);
+
+function shuffle<T>(array: T[]) {
+  const newArray = [...array];
+  let currentIndex = newArray.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [newArray[currentIndex], newArray[randomIndex]] = [
+      newArray[randomIndex],
+      newArray[currentIndex],
+    ];
+  }
+  return newArray;
+}
 
 // todo: add octothorpes cbs https://weirdweboctober.website/
