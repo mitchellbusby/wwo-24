@@ -12,7 +12,7 @@ import {
   faMapSigns,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Notifications = () => {
   const [notifications, setNotifications] = useState([...cannedNotifications]);
@@ -26,6 +26,11 @@ export const Notifications = () => {
     nextNotifications.splice(result.destination.index, 0, movedNotif);
     setNotifications(nextNotifications);
   };
+
+  useEffect(() => {
+    document.title = "Notifications | Weird Web October (Mitchell Busby)";
+  }, []);
+
   return (
     <div className={styles.page}>
       <h1>Notifications</h1>
