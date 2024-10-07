@@ -34,6 +34,12 @@ export const Notifications = () => {
   return (
     <div className={styles.page}>
       <link rel="octo:octothorpes" href="Notifications"></link>
+      <link
+        rel="preload"
+        as="fetch"
+        href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/#/notifications"
+      />
+      <link rel="octo:octothorpes" href="weirdweboctober" />
       <h1>Notifications</h1>
       <div>
         How do you like your notifications? Order the notifications below,
