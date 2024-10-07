@@ -53,6 +53,8 @@ export const Notifications = () => {
                   id={messageEntry.id}
                   index={idx}
                   icon={messageEntry.icon}
+                  heading={messageEntry.heading}
+                  body={messageEntry.body}
                 />
               ))}
               {provided.placeholder}
@@ -125,11 +127,42 @@ a {
 };
 
 const cannedNotifications = [
-  { id: "message-1", icon: faCoffee },
-  { id: "message-2", icon: faMessage },
-  { id: "message-3", icon: faBurger },
-  { id: "message-4", icon: faHeartCircleCheck },
-  { id: "message-5", icon: faMapSigns },
+  {
+    id: "message-1",
+    icon: faMessage,
+    heading: "Angela Bloggo",
+    body: "OK I have some huge tea",
+  },
+  {
+    id: "message-2",
+    icon: faCoffee,
+    heading: "Skip The Queue",
+    body: "Your coffee will be ready in 5 minutes",
+  },
+  {
+    id: "message-3",
+    icon: faBurger,
+    heading: "Deliverdash",
+    body: "20% off all orders TODAY ONLY with the coupon NEVERGOOUT",
+  },
+  {
+    id: "message-4",
+    icon: faHeartCircleCheck,
+    heading: "Activity",
+    body: "You haven't yet closed your activity rings for today! Get out and move some more",
+  },
+  {
+    id: "message-5",
+    icon: faMapSigns,
+    heading: "Maps",
+    body: "How did you find 401 Coffee? Share your review for others to find out cool places",
+  },
+  {
+    id: "message-6",
+    icon: faMessage,
+    heading: "Johnny Bravado",
+    body: "Are you headed to Fiona's party tonight?",
+  },
 ];
 
 // todo: finish filling out notifications

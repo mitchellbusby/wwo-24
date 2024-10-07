@@ -6,10 +6,14 @@ export const Notification = ({
   id,
   index,
   icon,
+  heading,
+  body,
 }: {
   id: any;
   index: number;
   icon: any;
+  heading: string;
+  body: string;
 }) => (
   <Draggable draggableId={id} index={index}>
     {(provided) => (
@@ -23,10 +27,21 @@ export const Notification = ({
           <FontAwesomeIcon icon={icon} size="lg" />
         </div>
         <div>
-          <div>Fionn of the Train</div>
-          <div>omg hahaha</div>
+          <div>{heading}</div>
+          <div>{body}</div>
         </div>
-        <div style={{ marginRight: "0", marginLeft: "auto" }}>45m ago</div>
+        <div
+          style={{
+            marginRight: "0",
+            marginLeft: "auto",
+            flexShrink: 0,
+            // width: "100%",
+            // flex: "0 1 auto",
+            fontSize: "14px",
+          }}
+        >
+          45m ago
+        </div>
       </div>
     )}
   </Draggable>
