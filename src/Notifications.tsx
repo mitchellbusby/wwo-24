@@ -3,7 +3,7 @@ import * as styles from "./Notifications.css";
 import {
   DragDropContext,
   Droppable,
-  OnDragEndResponder,
+  type OnDragEndResponder,
 } from "react-beautiful-dnd";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons/faCoffee";
 import {
