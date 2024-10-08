@@ -1,17 +1,14 @@
 ---
+import RootLayout from "../layouts/root.astro";
 ---
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <h1>Hello, World! This is Mitchell's website for Wild Web October</h1>
-  </body>
-</html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
+
+<RootLayout title="Weird Web October (Mitchell Busby)">
+  <Fragment slot="head">
+    <style>
+      h1 {
+        color: orange;
+      }
+    </style>
+  </Fragment>
+  <h1>Hello, World! This is Mitchell's website for Wild Web October</h1>
+</RootLayout>

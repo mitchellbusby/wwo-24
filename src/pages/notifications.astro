@@ -1,23 +1,19 @@
 ---
-import {Notifications} from "../Notifications.tsx"
+import RootLayout from "../layouts/root.astro";
+import { Notifications as NotificationsComponent } from "../Notifications.tsx";
 ---
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notifications | Weird Web October (Mitchell Busby)</title>
-    <link rel="octo:octothorpes" href="Notifications"></link>
-      <link
-        rel="preload"
-        as="fetch"
-        href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/notifications"
-      />
-      <link rel="octo:octothorpes" href="weirdweboctober" />
-  </head>
-  <body>
-    <div>
-      <Notifications client:only="react" />
-    </div>
-  </body>
-</html>
+
+<RootLayout title="Notifications | Weird Web October (Mitchell Busby)">
+  <div>
+    <NotificationsComponent client:only="react" />
+  </div>
+  <Fragment slot="head">
+    <link rel="octo:octothorpes" href="Notifications" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/notifications"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+  </Fragment>
+</RootLayout>
