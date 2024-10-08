@@ -10,4 +10,6 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  site: "https://mitchellbusby.github.io",
+  base: "/wwo-24",
 });
