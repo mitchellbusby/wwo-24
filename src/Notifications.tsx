@@ -12,7 +12,7 @@ import {
   faMapSigns,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const Notifications = () => {
   const [notifications, setNotifications] = useState([...cannedNotifications]);
@@ -27,19 +27,8 @@ export const Notifications = () => {
     setNotifications(nextNotifications);
   };
 
-  useEffect(() => {
-    document.title = "Notifications | Weird Web October (Mitchell Busby)";
-  }, []);
-
   return (
     <div className={styles.page}>
-      <link rel="octo:octothorpes" href="Notifications"></link>
-      <link
-        rel="preload"
-        as="fetch"
-        href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/#/notifications"
-      />
-      <link rel="octo:octothorpes" href="weirdweboctober" />
       <h1>Notifications</h1>
       <div>
         How do you like your notifications? Order the notifications below,
