@@ -1,4 +1,4 @@
-import { Notification } from "./Notifications/Notification";
+import { Notification } from "./Notification";
 import * as styles from "./Notifications.css";
 import {
   DragDropContext,
@@ -13,8 +13,8 @@ import {
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { SmolDocumentStyle } from "./components/SmolDocumentStyle";
-import { DailyFooter } from "./components/DailyFooter";
+import { SmolDocumentStyle } from "../components/SmolDocumentStyle";
+import { DailyFooter } from "../components/DailyFooter";
 
 export const Notifications = () => {
   const [notifications, setNotifications] = useState([...cannedNotifications]);
