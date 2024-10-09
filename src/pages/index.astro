@@ -76,7 +76,7 @@ const days: { theme: string; url?: string }[] = [
       > - she's doing a stellar job keeping up with the daily challenges (and inspired
       me to start with her banger entries 😂)
     </p>
-    <div>
+    <div class={styles.typoStack}>
       <h2>About me</h2>
       <p>
         I'm Mitchell! You can find me on the rest of the web at <a
@@ -84,9 +84,14 @@ const days: { theme: string; url?: string }[] = [
         > and <a href="https://aus.social/@busbub">on Mastodon!</a>
       </p>
     </div>
-    <div>
+    <div class={styles.typoStack}>
       <h2>About this site</h2>
-      <p>This is a little Astro-based static site hosted on Github.</p>
+      <p>
+        This is a little <a href="https://astro.build/">Astro-based</a> static site
+        hosted on Github - <a href="https://github.com/mitchellbusby/wwo-24"
+          >check out the source code.</a
+        >
+      </p>
     </div>
   </div>
   <SmolDocumentStyle />

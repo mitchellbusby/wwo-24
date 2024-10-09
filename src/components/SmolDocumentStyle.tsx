@@ -1,3 +1,6 @@
+/**
+ * This is a reusable injection of styles for Smol Document Style (source: https://smolcss.dev/#smol-document-styles)
+ */
 export const SmolDocumentStyle = () => (
   <style
     dangerouslySetInnerHTML={{

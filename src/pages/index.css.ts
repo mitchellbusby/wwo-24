@@ -6,6 +6,12 @@ export const wrapper = style({
   gap: "24px",
 });
 
+export const typoStack = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: "12px",
+});
+
 export const list = style({
   columnCount: 1,
   "@media": {
