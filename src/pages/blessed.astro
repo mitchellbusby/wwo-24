@@ -1,0 +1,11 @@
+---
+import { Blessed as BlessedComponent } from "../Blessed/Blessed";
+import Root from "../layouts/root.astro";
+---
+
+<Root title="Blessed | Weird Web October (Mitchell Busby)">
+  <BlessedComponent client:only="react" />
+  <Fragment slot="head">
+    <!-- add attribution -->
+  </Fragment>
+</Root>
