@@ -6,6 +6,16 @@ import Root from "../layouts/root.astro";
 <Root title="Blessed | Weird Web October (Mitchell Busby)">
   <BlessedComponent client:only="react" />
   <Fragment slot="head">
-    <!-- add attribution -->
+    <meta
+      name="description"
+      content="Silly little site where I tried to make my own sparkles confetti 😅"
+    />
+    <link rel="octo:octothorpes" href="Blessed" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/blessed"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
   </Fragment>
 </Root>
