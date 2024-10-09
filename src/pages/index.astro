@@ -2,6 +2,39 @@
 import RootLayout from "../layouts/root.astro";
 import { SmolDocumentStyle } from "../components/SmolDocumentStyle";
 import * as styles from "./index.css";
+const days: { theme: string; url?: string }[] = [
+  { theme: "Nature" },
+  { theme: "CSS" },
+  { theme: "Color" },
+  { theme: "Lists" },
+  { theme: "Food" },
+  { theme: "Notifications", url: "/notifications" },
+  { theme: "Science" },
+  { theme: "Hashtags" },
+  { theme: "Blessed" },
+  { theme: "Art" },
+  { theme: "API" },
+  { theme: "Ritual" },
+  { theme: "GIFs" },
+  { theme: "History" },
+  { theme: "Audio" },
+  { theme: "Social" },
+  { theme: "Dimensions" },
+  { theme: "Words" },
+  { theme: "Data" },
+  { theme: "Capitalism" },
+  { theme: "Memes" },
+  { theme: "Bugs" },
+  { theme: "IRL" },
+  { theme: "Cursed" },
+  { theme: "Interactive" },
+  { theme: "Chat" },
+  { theme: "Nostalgia" },
+  { theme: "Generative" },
+  { theme: "Forms" },
+  { theme: "Emoji" },
+  { theme: "Spooky" },
+];
 ---
 
 <RootLayout title="Weird Web October (Mitchell Busby)">
@@ -24,14 +57,24 @@ import * as styles from "./index.css";
       👋 I'm doing a few challenges from Weird Web October (aiming for once a
       week) just to get the creative juices flowing. Here's mine:
     </p>
-    <ul>
-      <li><a href="/wwo-24/notifications">Notifications</a></li>
-    </ul>
+    <ol class={styles.list}>
+      {
+        days.map((day) =>
+          day.url ? (
+            <li>
+              <a href={"/wwo-24" + day.url}>{day.theme}</a>
+            </li>
+          ) : (
+            <li>{day.theme}</li>
+          )
+        )
+      }
+    </ol>
     <p>
       Also check out my pal <a href="https://by.georgie.nu/weird/"
         >Georgie's entries</a
-      > - she's doing a stellar job keeping up with the daily challenges (and is
-      way better than me 😂)
+      > - she's doing a stellar job keeping up with the daily challenges (and inspired
+      me to start with her banger entries 😂)
     </p>
     <div>
       <h2>About me</h2>
