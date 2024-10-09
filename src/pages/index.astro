@@ -1,31 +1,50 @@
 ---
 import RootLayout from "../layouts/root.astro";
+import { SmolDocumentStyle } from "../components/SmolDocumentStyle";
+import * as styles from "./index.css";
 ---
 
 <RootLayout title="Weird Web October (Mitchell Busby)">
   <Fragment slot="head">
     <style>
-      h1 {
+      h1,
+      h2,
+      a {
         color: orange;
       }
     </style>
   </Fragment>
-  <h1>
-    Hello, World! This is Mitchell's website for <a
-      href="https://weirdweboctober.website/">Weird Web October</a
-    >
-  </h1>
-  <p>
-    👋 I'm doing a few challenges from Weird Web October (aiming for once a
-    week) just to get the creative juices flowing. Here's mine:
-  </p>
-  <ul>
-    <li><a href="/wwo-24/notifications">Notifications</a></li>
-  </ul>
-  <p>
-    Also check out my pal <a href="https://by.georgie.nu/weird/"
-      >Georgie's entries</a
-    > - she's doing a stellar job keeping up with the daily challenges (and is way
-    better than me 😂)
-  </p>
+  <div class={styles.wrapper}>
+    <h1>
+      Hello, World! This is Mitchell's website for <a
+        href="https://weirdweboctober.website/">Weird Web October</a
+      >
+    </h1>
+    <p>
+      👋 I'm doing a few challenges from Weird Web October (aiming for once a
+      week) just to get the creative juices flowing. Here's mine:
+    </p>
+    <ul>
+      <li><a href="/wwo-24/notifications">Notifications</a></li>
+    </ul>
+    <p>
+      Also check out my pal <a href="https://by.georgie.nu/weird/"
+        >Georgie's entries</a
+      > - she's doing a stellar job keeping up with the daily challenges (and is
+      way better than me 😂)
+    </p>
+    <div>
+      <h2>About me</h2>
+      <p>
+        I'm Mitchell! You can find me on the rest of the web at <a
+          href="https://www.mitchellbusby.com/">mitchellbusby.com</a
+        > and <a href="https://aus.social/@busbub">on Mastodon!</a>
+      </p>
+    </div>
+    <div>
+      <h2>About this site</h2>
+      <p>This is a little Astro-based static site hosted on Github.</p>
+    </div>
+  </div>
+  <SmolDocumentStyle />
 </RootLayout>
