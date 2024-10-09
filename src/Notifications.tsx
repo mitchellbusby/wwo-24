@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { SmolDocumentStyle } from "./components/SmolDocumentStyle";
+import { DailyFooter } from "./components/DailyFooter";
 
 export const Notifications = () => {
   const [notifications, setNotifications] = useState([...cannedNotifications]);
@@ -60,6 +61,7 @@ export const Notifications = () => {
           )}
         </Droppable>
       </DragDropContext>
+      <DailyFooter day={"notifications"} />
       <SmolDocumentStyle />
     </div>
   );
