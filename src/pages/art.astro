@@ -1,0 +1,23 @@
+---
+import Root from "../layouts/root.astro";
+import ArtMdx from "../Art/Art.mdx";
+---
+
+<Root title="Art | Weird Web October (Mitchell Busby)">
+  <div class="smol-container">
+    <ArtMdx />
+  </div>
+  <style is:global>
+    h1,
+    h2,
+    p,
+    li,
+    a {
+      font-family: system-ui, sans-serif;
+    }
+    .smol-container {
+      width: min(100% - 3rem, var(--container-max, 60ch));
+      margin-inline: auto;
+    }
+  </style>
+</Root>
