@@ -14,7 +14,7 @@ const weirdSpacerRotation = keyframes({
 
 export const weirdSpacer = style({
   transform: "rotate(20deg)",
-  border: "2px solid #c6c7ce",
+  border: "2px solid #a29bfe",
   animation: weirdSpacerRotation,
   animationDuration: "6s",
   animationTimingFunction: "cubic-bezier(0.2, 0, 0.4, 1)",
