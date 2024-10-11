@@ -20,7 +20,18 @@ const json = JSON.stringify(
 
 <Root>
   <pre>{json}</pre>
-  <style>
-    white-space: pre-wrap;
-  </style>
+
+  <Fragment slot="head">
+    <link rel="octo:octothorpes" href="API" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/api"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <meta
+      name="description"
+      content="Explore the pages of my Weird Web October site with the power of JSON!"
+    />
+  </Fragment>
 </Root>
