@@ -7,17 +7,23 @@ import ArtMdx from "../Art/Art.mdx";
   <div class="smol-container">
     <ArtMdx />
   </div>
-  <style is:global>
+  <style is:inline>
     h1,
     h2,
     p,
     li,
     a {
       font-family: system-ui, sans-serif;
+      color: white;
     }
     .smol-container {
       width: min(100% - 3rem, var(--container-max, 60ch));
       margin-inline: auto;
+    }
+
+    body {
+      background-color: #6c5ce7;
+      font-size: 18px;
     }
   </style>
   <Fragment slot="head">

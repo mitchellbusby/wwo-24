@@ -108,7 +108,7 @@ export const Blessed = () => {
         </div>
       ))}
       <div className={styles.blessedOuterIsland}>
-        <h1>Click to be blessed (no mobile support sorry!)</h1>
+        <h1>Click to be blessed</h1>
         <div data-blessed-ignore={true} className={styles.blessedIsland}>
           <DailyFooter day="blessed" />
         </div>
