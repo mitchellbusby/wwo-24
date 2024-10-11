@@ -1,0 +1,26 @@
+---
+import Root from "../layouts/root.astro";
+const STATIC_HOME = "https://mitchellbusby.github.io";
+
+const posts = import.meta.glob("./*.astro");
+const postMeta: { url: string }[] = (await Promise.all(
+  Object.values(posts).map((p) => p())
+)) as any;
+
+const json = JSON.stringify(
+  {
+    posts: postMeta.map((m) => `${STATIC_HOME}${m.url}`),
+    home: `${STATIC_HOME}/wwo-24/`,
+    allEntriesForAPI: "https://octothorp.es/~/API",
+  },
+  undefined,
+  " "
+);
+---
+
+<Root>
+  <pre>{json}</pre>
+  <style>
+    white-space: pre-wrap;
+  </style>
+</Root>

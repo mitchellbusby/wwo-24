@@ -9,9 +9,3 @@ export const iframe = style({
   aspectRatio: "16 / 9",
   width: "100% !important",
 });
-
-globalStyle("body, a", {
-  backgroundColor: "#6c5ce7",
-  color: "white",
-  fontSize: "18px",
-});
