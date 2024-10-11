@@ -9,7 +9,9 @@ const postMeta: { url: string }[] = (await Promise.all(
 
 const json = JSON.stringify(
   {
-    posts: postMeta.map((m) => `${STATIC_HOME}${m.url}`),
+    posts: postMeta
+      .filter((f) => f.url === `${STATIC_HOME}/wwo-24`)
+      .map((m) => `${STATIC_HOME}${m.url}`),
     home: `${STATIC_HOME}/wwo-24/`,
     allEntriesForAPI: "https://octothorp.es/~/API",
   },
