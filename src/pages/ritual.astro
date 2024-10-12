@@ -3,14 +3,7 @@ import Root from "../layouts/root.astro";
 import { RitualMap } from "../components/ritual/Ritual";
 ---
 
-<!-- ideas
- 
-- daily rituals
-- the ritual of drinking tea
-???
-
--->
-<Root title="Morning ritual">
+<Root title="Morning walking ritual map">
   <div>
     <RitualMap client:only="react" />
   </div>
@@ -18,7 +11,8 @@ import { RitualMap } from "../components/ritual/Ritual";
     h1,
     h2,
     h3,
-    p {
+    p,
+    a {
       font-family: system-ui, sans-serif;
       margin-top: 0;
       margin-bottom: 0;
@@ -27,4 +21,17 @@ import { RitualMap } from "../components/ritual/Ritual";
       font-size: 14px;
     }
   </style>
+  <Fragment slot="head">
+    <link rel="octo:octothorpes" href="Ritual" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/ritual"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <meta
+      name="description"
+      content="A map shaded with areas that I used to go on morning walks around :)"
+    />
+  </Fragment>
 </Root>

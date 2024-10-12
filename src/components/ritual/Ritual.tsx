@@ -17,6 +17,7 @@ import {
   mapLegendLine,
   mapWrapper,
 } from "./Ritual.css";
+import { DailyFooter } from "../DailyFooter";
 
 const greenOptions = { color: "green", fillColor: "green" };
 const purpleOptions = { color: "purple", fillColor: "purple" };
@@ -74,7 +75,7 @@ export const RitualMap = () => {
       </MapContainer>
       <div className={mapLegend}>
         <div className={mapLegendLayout}>
-          <h1>Walking rituals</h1>
+          <h1>Morning walking</h1>
           <p>
             This is a little map of areas I walked regularly when I lived in St
             Peters, where I took up the morning ritual of going on walks :)
@@ -94,6 +95,7 @@ export const RitualMap = () => {
             ></div>
             <p>Visited sometimes</p>
           </div>
+          <DailyFooter day="ritual" />
         </div>
       </div>
     </div>
