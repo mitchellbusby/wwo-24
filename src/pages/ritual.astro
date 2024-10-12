@@ -1,3 +1,8 @@
+---
+import Root from "../layouts/root.astro";
+import { RitualMap } from "../components/ritual/Ritual";
+---
+
 <!-- ideas
  
 - daily rituals
@@ -5,3 +10,21 @@
 ???
 
 -->
+<Root title="Morning ritual">
+  <div>
+    <RitualMap client:only="react" />
+  </div>
+  <style is:inline>
+    h1,
+    h2,
+    h3,
+    p {
+      font-family: system-ui, sans-serif;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    body {
+      font-size: 14px;
+    }
+  </style>
+</Root>
