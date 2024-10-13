@@ -178,6 +178,7 @@ export const GifCanvas = forwardRef(
       gradient?.changeGradientColors(
         preset === "one" ? COLORS_ONE : COLORS_TWO
       );
+      gradient?.setCanvasSize(800, 600);
     }, [preset]);
 
     const regenerateSeed = () => {
