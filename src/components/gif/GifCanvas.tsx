@@ -199,6 +199,9 @@ export const GifCanvas = forwardRef(
       setInterval(() => {
         currentPosition.current = currentPosition.current + 0.1;
         gradient?.changePosition(currentPosition.current);
+        if (ref.current) {
+          ref.current.getContext("2d").filter = "blur(40px)";
+        }
       }, 16.6);
     }, []);
 
