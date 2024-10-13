@@ -11,9 +11,33 @@ import {
 } from "react";
 import { DailyFooter } from "../DailyFooter";
 
-const COLORS_ONE = ["#eb75b6", "#ddf3ff", "#6e3deb", "#c92f3c"];
-const COLORS_TWO = ["#ffbe76", "#eb4d4b", "#30336b", "#6ab04c"];
-type Preset = "one" | "two";
+type PresetId = string;
+
+const presets = [
+  {
+    id: "one",
+    name: "One",
+    colors: ["#eb75b6", "#ddf3ff", "#6e3deb", "#c92f3c"],
+  },
+  {
+    id: "two",
+    name: "Two",
+    colors: ["#ffbe76", "#eb4d4b", "#30336b", "#6ab04c"],
+  },
+
+  {
+    id: "three",
+    name: "Three",
+    colors: ["#8e44ad", "#2980b9", "#ecf0f1", "#f1c40f"],
+  },
+  {
+    id: "four",
+    name: "Four",
+    colors: ["#2ecc71", "#1abc9c", "#ecf0f1", "#f1c40f", "#3498db"],
+  },
+];
+
+const getPresetColors = (id: string) => presets.find((f) => f.id === id).colors;
 
 const gifWorkerFactory = () =>
   new GifModule({
@@ -26,7 +50,7 @@ export const GifMaker = () => {
   const [canvas, setCanvas] = useState<HTMLCanvasElement>(undefined);
   const [gifBlob, setGifBlob] = useState<Blob | undefined>(undefined);
   const [capturingGif, setCapturingGif] = useState<boolean>(false);
-  const [preset, setPreset] = useState<Preset>("one");
+  const [preset, setPreset] = useState<PresetId>("one");
 
   const gifBlobUrl = useMemo(() => {
     return !!gifBlob ? URL.createObjectURL(gifBlob) : undefined;
@@ -100,32 +124,21 @@ export const GifMaker = () => {
             <div>
               <fieldset>
                 <legend>Select a preset color</legend>
-                <div>
-                  <input
-                    type="radio"
-                    id="preset-radio-one"
-                    name="one"
-                    value="one"
-                    onChange={(e) => {
-                      setPreset(e.target.value);
-                    }}
-                    checked={preset === "one"}
-                  />
-                  <label htmlFor="preset-radio-one">One</label>
-                </div>
-                <div>
-                  <input
-                    type="radio"
-                    id="preset-radio-two"
-                    name="two"
-                    value="two"
-                    onChange={(e) => {
-                      setPreset(e.target.value);
-                    }}
-                    checked={preset === "two"}
-                  />
-                  <label htmlFor="preset-radio-two">Two</label>
-                </div>
+                {presets.map((m) => (
+                  <div key={m.id}>
+                    <input
+                      type="radio"
+                      id={`preset-radio-${m.id}`}
+                      name={m.id}
+                      value={m.id}
+                      onChange={(e) => {
+                        setPreset(e.target.value);
+                      }}
+                      checked={preset === m.id}
+                    />
+                    <label htmlFor={`preset-radio-${m.id}`}>{m.name}</label>
+                  </div>
+                ))}
               </fieldset>
             </div>
           </div>
@@ -160,7 +173,10 @@ export const GifMaker = () => {
 };
 
 export const GifCanvas = forwardRef(
-  ({ preset }: { preset: Preset }, ref: RefObject<HTMLCanvasElement>) => {
+  (
+    { preset: presetId }: { preset: PresetId },
+    ref: RefObject<HTMLCanvasElement>
+  ) => {
     // create instance of Gradient Class
     const [gradient] = useState(() => new MeshGradient());
     const canvasId = "my-canvas";
@@ -175,10 +191,7 @@ export const GifCanvas = forwardRef(
       // @Params
       // 1. id of canvas element
       // 2. array of colors in hexcode
-      gradient.initGradient(
-        "#" + canvasId,
-        preset === "one" ? COLORS_ONE : COLORS_TWO
-      );
+      gradient.initGradient("#" + canvasId, getPresetColors(presetId));
       gradient.setCanvasSize(600, 400);
       // Mesh Id
       // Any positive numeric value which acts as a seed for mesh pattern
@@ -190,11 +203,9 @@ export const GifCanvas = forwardRef(
     }, []);
 
     useEffect(() => {
-      gradient?.changeGradientColors(
-        preset === "one" ? COLORS_ONE : COLORS_TWO
-      );
+      gradient?.changeGradientColors(getPresetColors(presetId));
       gradient?.setCanvasSize(800, 600);
-    }, [preset]);
+    }, [presetId]);
 
     const regenerateSeed = () => {
       const value = Math.floor(Math.random() * 1000);
