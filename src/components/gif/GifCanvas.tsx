@@ -9,6 +9,7 @@ import {
   useState,
   type RefObject,
 } from "react";
+import { DailyFooter } from "../DailyFooter";
 
 const COLORS_ONE = ["#eb75b6", "#ddf3ff", "#6e3deb", "#c92f3c"];
 const COLORS_TWO = ["#ffbe76", "#eb4d4b", "#30336b", "#6ab04c"];
@@ -131,6 +132,20 @@ export const GifMaker = () => {
           <button onClick={handleTakeSnapshot} disabled={!canTakeSnapshot}>
             {capturingGif ? "Capturing GIF..." : "Capture GIF"}
           </button>
+          <p>
+            This page makes use of the{" "}
+            <a href="https://github.com/anup-a/mesh-gradient.js">
+              mesh-gradient.js
+            </a>{" "}
+            npm library to create a mesh gradient on a HTML canvas, and{" "}
+            <a href="https://github.com/terikon/gif.js.optimized">
+              gif.js.optimised
+            </a>{" "}
+            to generate a GIF
+          </p>
+          <div>
+            <DailyFooter day="GIFs" />
+          </div>
         </div>
       </div>
       {!!gifBlobUrl && (

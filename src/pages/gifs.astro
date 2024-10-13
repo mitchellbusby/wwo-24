@@ -3,16 +3,28 @@ import Root from "../layouts/root.astro";
 import { GifMaker } from "../components/gif/GifCanvas";
 ---
 
-<Root>
+<Root title="The mesh gradient to GIF pipeline">
   <GifMaker client:only="react" />
+  <Fragment slot="head">
+    <link rel="octo:octothorpes" href="GIFs" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/gifs"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <meta
+      name="description"
+      content="Make your own GIF from a shiny and trendy mesh gradient ✨ 💅"
+    />
+  </Fragment>
 </Root>
 
 <!-- ideas
 
   done looks like:
   - better fonts
-  - add more colors
-  - attribution
+  - add more color presets
   - customise the colours!
   - mesh vibe
   - optimise the speed its SO fast
