@@ -79,7 +79,7 @@ export const GifMaker = () => {
         >
           <h1>Mint your own mesh gradient GIF ✨</h1>
           <p>
-            This generates a 5-second GIF from a fancy 💅 mesh gradient 💅 to
+            This generates a ~3-second GIF from a fancy 💅 mesh gradient 💅 to
             the left.
           </p>
           <p>
