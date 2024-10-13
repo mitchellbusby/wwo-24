@@ -53,14 +53,14 @@ export const GifMaker = () => {
     delete gifWorkerInstance.finishedFrames;
     delete gifWorkerInstance.nextFrame;
 
-    gifWorkerInstance.addFrame(canvas, { delay: 0 });
+    gifWorkerInstance.addFrame(canvas, { delay: 50 });
 
     const intervalId = setInterval(() => {
       gifWorkerInstance.addFrame(canvas, {
         copy: true,
-        delay: 20,
+        delay: 50,
       });
-    }, 75);
+    }, 50);
 
     setTimeout(() => {
       gifWorkerInstance.render();
@@ -169,7 +169,7 @@ export const GifCanvas = forwardRef(
       // Any positive numeric value which acts as a seed for mesh pattern
       gradient?.changePosition(currentPosition);
       setInterval(() => {
-        currentPosition.current = currentPosition.current + 0.07;
+        currentPosition.current = currentPosition.current + 0.1;
         gradient?.changePosition(currentPosition.current);
       }, 16.6);
     }, []);
