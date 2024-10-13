@@ -1,0 +1,17 @@
+---
+import Root from "../layouts/root.astro";
+import { GifMaker } from "../components/gif/GifCanvas";
+---
+
+<Root>
+  <GifMaker client:only="react" />
+</Root>
+
+<!-- ideas
+
+  - gif maker
+  - make gifs from a canvas with some
+    arbitrary creativity
+  - pre bake some gifs into a gallery
+  - mint your own gif nft
+-->

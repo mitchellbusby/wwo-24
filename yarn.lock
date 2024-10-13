@@ -2220,6 +2220,11 @@ get-east-asian-width@^1.0.0:
   resolved "https://registry.yarnpkg.com/get-east-asian-width/-/get-east-asian-width-1.2.0.tgz#5e6ebd9baee6fb8b7b6bd505221065f0cd91f64e"
   integrity sha512-2nk+7SIVb14QrgXFHcm84tD4bKQz0RxPuMT8Ag5KPOq7J5fEmAg0UbXdTOSHqNuHSU28k55qnceesxXRZGzKWA==
 
+gif.js.optimized@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gif.js.optimized/-/gif.js.optimized-1.0.1.tgz#20fa5403654dfec402ae5f41f2385bebd8099105"
+  integrity sha512-IS0F42Xken6lp/iR4irgG4r52tvxRkEKsXGZmlUHUOb00SWNMezJOJwkVaJk2MLW53rqzMbPnnBtEhs9hcMJ9w==
+
 github-slugger@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-2.0.0.tgz#52cf2f9279a21eb6c59dd385b410f0c0adda8f1a"
@@ -2992,6 +2997,11 @@ merge2@^1.3.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
+
+mesh-gradient.js@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/mesh-gradient.js/-/mesh-gradient.js-0.0.5.tgz#3d94740951b017628578471d84dec8f5b636f24b"
+  integrity sha512-gIfw8JnObr4DHSWs/g8BnYBeCrmdyRw98WjJ4eMS8PSbxc9bBgAQNvXY9RgJh/u2o66HesrD9jVdwK1uj9v1Zw==
 
 micromark-core-commonmark@^2.0.0:
   version "2.0.1"
