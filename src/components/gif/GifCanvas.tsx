@@ -41,7 +41,7 @@ const getPresetColors = (id: string) => presets.find((f) => f.id === id).colors;
 
 const gifWorkerFactory = () =>
   new GifModule({
-    workers: 2,
+    workers: navigator.hardwareConcurrency || 2,
     quality: 10,
     workerScript: gifWorkerUrl,
   });
