@@ -60,7 +60,7 @@ export const GifMaker = () => {
         copy: true,
         delay: 20,
       });
-    }, 100);
+    }, 75);
 
     setTimeout(() => {
       gifWorkerInstance.render();
