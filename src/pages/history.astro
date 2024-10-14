@@ -5,7 +5,7 @@ import { Timeline } from "../components/timeline/Timeline";
 import Root from "../layouts/root.astro";
 ---
 
-<Root>
+<Root title="Programming and me: a history">
   <h1>Programming and me: a history</h1>
   <br />
   <div>
@@ -23,4 +23,17 @@ import Root from "../layouts/root.astro";
       color: white;
     }
   </style>
+  <Fragment slot="head">
+    <link rel="octo:octothorpes" href="history" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://mitchellbusby.github.io/wwo-24/history"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <meta
+      name="description"
+      content="A short history of me learning to program"
+    />
+  </Fragment>
 </Root>
