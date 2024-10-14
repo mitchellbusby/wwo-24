@@ -13,6 +13,7 @@ export const line = style({
   height: `calc(${eventCount} * 150px)`,
   width: "16px",
   background: "#c0392b",
+  borderRadius: "8px",
 });
 
 export const eventOffset = createVar();

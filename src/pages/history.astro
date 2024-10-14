@@ -1,4 +1,5 @@
 ---
+import { DailyFooter } from "../components/DailyFooter";
 import { SmolDocumentStyle } from "../components/SmolDocumentStyle";
 import { Timeline } from "../components/timeline/Timeline";
 import Root from "../layouts/root.astro";
@@ -10,12 +11,15 @@ import Root from "../layouts/root.astro";
   <div>
     <Timeline />
   </div>
+  <br />
+  <DailyFooter day="history" />
   <SmolDocumentStyle />
-  <style>
+  <style is:inline>
     body {
       background-color: #2c3e50;
     }
-    * {
+    *,
+    a {
       color: white;
     }
   </style>
